@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Gastitos. Producto de Motmot System</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+	<!--<link rel="stylesheet" href="css/gastitos.min.css" />-->
+    <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="css/jqm-datebox-1.4.2.min.css">
+	<style type="text/css">
+		.alignRightPesos {text-align: right; padding-right: 10px;}
+		figure { text-align: center;}
+	</style>
+</head>
+<body>
+
+<div data-role="page" id="login">
+
+	<div data-role="header">
+		<a href="#" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-notext">Info</a>
+		<h1><img src="image/logo.png" alt="gastitos logo" width="80px" /></h1>
+		<a href="#info" class="ui-btn ui-btn-icon-right ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext">Info</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h2>Bienvenido a Gastitos</h2>
+		<p>Lleva el registro de todos tus gastos de una manera fácil y sencilla</p>
+		<form>
+			Correo: <input type="email" name="email" id="email" value="" placeholder="ejemplo@hotmail.com">
+			Contraseña: <input type="password" name="password" id="password" value="">
+			<a href="#" id="btn-entrar" data-role="button" >Entrar</a>
+			<a href="#newuser" data-role="button" class="ui-btn ui-btn-b ui-corner-all" >Registrate</a>
+		</form>
+	</div><!-- /content -->
+</div><!-- /page -->
+<div data-role="page" id="newuser" >
+
+	<div data-role="header">
+		<a href="#login" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">Regresar</a>
+		<h1><img src="image/logo.png" alt="gastitos logo" width="80px" /></h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<form>
+			Correo: <input type="email" name="email" id="remail" value="" placeholder="ejemplo@hotmail.com">
+			Contraseña: <input type="password" name="password" id="rpassword" value="">
+			<a href="#" id="btn-registrar" class="ui-shadow ui-btn ui-corner-all" data-transition="slidedown">Enviar</a>
+		</form>
+	</div><!-- /content -->
+</div><!-- /page -->
+<div data-role="page" id="main" data-theme="a">
+	<div data-role="panel" id="mypanel" data-position="left" data-display="reveal">
+    	<ul data-role="listview" data-split-theme="a" >
+    		<li><a href="#myinfo">Perfil</a></li>
+			<li><a href="#report">Informes</a></li>
+			<li data-rel="close"><span>Cerrar</span></li>
+		</ul>
+	</div><!-- /panel -->
+	<div data-role="header">
+		<a href="#mypanel" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-bars">Menú</a>
+		<h1><img src="image/logo.png" alt="gastitos logo" width="80px" /></h1>
+		<button id="btn-salir" class="ui-btn-right ui-btn ui-btn-a ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-check">Salir</button>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h2>Hoy he gastado: <strong>$<span id="total-gastos-hoy">0</span></strong> pesos</h2>
+		<form>
+			<div class="ui-grid-a">
+			    <div class="ui-block-a"><p>¿En que gastaste?</p></div>
+			    <div class="ui-block-b"><input type="text" name="concept" id="concept" value="" placeholder="Pasaje"></div>
+			</div>
+			<div class="ui-grid-b">
+				<div class="ui-block-a"><p>¿Cuanto fue?</p></div>
+				<div class="ui-block-b alignRightPesos"><p><strong>$</strong></p></div>
+				<div class="ui-block-c"><input type="text" name="cost" value="" placeholder="8.50" id="cost"></div>
+			</div>
+			<ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true"  id="list-gastos">
+				<li>lddflskd</li>
+			</ul>
+		</form>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li>
+					<a href="#" id="btn-agregar-gasto" data-icon="plus" data-transition="pop">Agregar</a>
+					<!--<a href="#" id="btn-agregar-gasto" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-plus" data-role="button" data-role="popup" data-transition="pop">Agregar</a>-->
+				</li>
+			</ul>
+		</div>
+		
+	</div><!-- /footer -->
+</div><!-- /page -->
+<div data-role="page" id="info" data-theme="a">
+
+	<div data-role="header">
+		<a href="#login" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">Regresar</a>
+		<h1><img src="image/logo.png" alt="gastitos logo" width="80px" /></h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h2>Gastitos</h2>
+		<p>¡Es gratis!</p>
+		<p>Esta en desarrollo</p>
+		<h2>¿Te interesa o quieres unirte al proyecto?</h2>
+		<a href="mailto:nelson@motmotsystem.net" data-role="button">nelson@motmotsystem.net</a> 
+		<a href="https://twitter.com/nelsonkewebs" data-role="button" target="_blank">@nelsonkewebs</a>
+		<a href="https://www.facebook.com/nelsonoy" data-role="button" target="_blank">Facebook</a> </p>
+	</div><!-- /content -->
+</div><!-- /page -->
+
+<div data-role="page" id="myinfo" data-theme="a">
+
+	<div data-role="header">
+		<a href="#main" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">Regresar</a>
+		<h1><img src="image/logo.png" alt="gastitos logo" width="80px" /></h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>Correo: <span id="username-myinfo">correo@hotmail.com</span></p>
+		<p><a href="#cambiarContrasena" data-role="button">Cambiar contraseña</a></p>
+	</div><!-- /content -->
+</div><!-- /page -->
+
+<div data-role="page" id="report" data-theme="a">
+
+	<div data-role="header">
+		<a href="#main" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">Regresar</a>
+		<h1><img src="image/logo.png" alt="gastitos logo" width="80px" /></h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h2>Cuanto gastes ...</h2>
+		<ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true"  id="list-gastos">
+			<li><a href="#ayerReporte" id="btn-menu-report-ayer">Ayer</a></li>
+			<li><a href="#fecha-reporte" id="btn-menu-report-fecha">En la fecha ...</a></li>
+			<li><a href="#mes-reporte">En el mes de ... de este año</a></li>
+			<li><a href="#anio-reporte" id="btn-menu-report-anio">En el año ...</a></li>
+		</ul>
+	</div><!-- /content -->
+</div><!-- /page -->
+
+<div data-role="page" id="ayerReporte" data-theme="a">
+	<div data-role="header">
+		<a href="#report" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">Regresar</a>
+		<h1><img src="image/logo.png" alt="gastitos logo" width="80px" /></h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h2 id="ayer-reporte-total">Ayer gastaste: <strong>$<span id="total-gastos-hoy">0</span></strong> pesos</h2>
+		<ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true"  id="list-gastos-ayer">
+		</ul>
+	</div><!-- /content -->
+</div><!-- /page -->
+
+<div data-role="page" id="fecha-reporte" data-theme="a">
+	<div data-role="header">
+		<a href="#report" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">Regresar</a>
+		<h1><img src="image/logo.png" alt="gastitos logo" width="80px" /></h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<input name="fecha-seleccionada" id="fecha-seleccionada" type="date" value="" data-role="datebox" data-options='{"mode": "calbox"}'>
+   		<input type="button" value="Ver" id="btn-ver-fecha-reporte">
+		<h2 id="fecha-reporte-total"></h2>
+		<ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true"  id="list-gastos-fecha">
+		</ul>
+	</div><!-- /content -->
+</div><!-- /page -->
+
+<div data-role="page" id="mes-reporte" data-theme="a">
+	<div data-role="header">
+		<a href="#report" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">Regresar</a>
+		<h1><img src="image/logo.png" alt="gastitos logo" width="80px" /></h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<select id="meses" name="meses" data-native-menu="false">
+			<option value="0">Selecciona un mes</option> 
+			<option value="1">Enero</option>
+			<option value="2">Febrero</option>
+			<option value="3">Marzo</option>
+			<option value="4">Abril</option>
+			<option value="5">Mayo</option>
+			<option value="6">Junio</option>
+			<option value="7">Julio</option>
+			<option value="8">Agosto</option>
+			<option value="9">Septiembre</option>
+			<option value="10">Octubre</option>
+			<option value="11">Noviembre</option>
+			<option value="12">Diciembre</option>
+		</select>
+		<h2 id="mes-reporte-total"></h2>
+		<ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true"  id="list-gastos-mes">
+		</ul>
+	</div><!-- /content -->
+</div><!-- /page -->
+
+<div data-role="page" id="anio-reporte" data-theme="a">
+	<div data-role="header">
+		<a href="#report" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">Regresar</a>
+		<h1><img src="image/logo.png" alt="gastitos logo" width="80px" /></h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<select id="select-anio" name="select-anio" data-native-menu="false">
+			<option value="0">Selecciona un año</option>
+		</select>
+		<input type="button" id="btn-ver-report-anio" value="Ver" /> 
+		<h2 id="anio-reporte-total"></h2>
+		<ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true"  id="list-gastos-anio">
+		</ul>
+	</div><!-- /content -->
+</div><!-- /page -->
+
+<div data-role="page" id="registerMessage" data-dialog="true" data-transition="pop"  data-close-btn="none" data-theme="a">
+
+	<div data-role="header">
+		<h1><img src="image/logo.png" alt="gastitos logo" width="80px" /></h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>¡Gracias por registrarte!</p>
+		<p>Para completar tu registro te hemos enviado un correo para que actives tu cuenta.</p>
+		<p>Nota: Si no te aparece el correo en tu bandeja de entrada busca en correos no deseados.</p>
+		<p>:)</p>
+		<a href="#login" data-role="button">Ok</a>
+	</div><!-- /content -->
+</div><!-- /page -->
+<div data-role="page" id="correoUtilizadoMessage" data-dialog="true" data-transition="pop"  data-close-btn="none" data-theme="a">
+
+	<div data-role="header">
+		<h1><img src="image/logo.png" alt="gastitos logo" width="80px" /></h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>Este correo ya esta registrado</p>
+		<p>:(</p>
+		<a href="#newuser" data-role="button">Ok</a>
+	</div><!-- /content -->
+</div><!-- /page -->
+
+<div data-role="page" id="cambiarContrasena" data-dialog="true" data-transition="pop"  data-close-btn="none" data-theme="a">
+
+	<div data-role="header">
+		<h1><img src="image/logo.png" alt="gastitos logo" width="80px" /></h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<form>
+			Nueva contraseña: <input type="password" name="email" id="newPasswordUno" value="">
+			Repetir contraseña: <input type="password" name="password" id="newPasswordDos" value="">
+			<a href="#" id="btn-cambiar-contrasena" class="ui-shadow ui-btn ui-corner-all" data-transition="slidedown">Cambiar</a>
+			<a href="#myinfo" data-role="button" class="ui-btn ui-btn-b ui-corner-all">Cancelar</a>
+		</form>
+	</div><!-- /content -->
+</div><!-- /page -->
+
+<div data-role="page" id="message" data-dialog="true" data-transition="pop" data-theme="a">
+	<div data-role="header">
+		<h1><img src="image/logo.png" alt="gastitos logo" width="80px" /></h1>
+	</div>
+	<div role="main" class="ui-content" id="messageContent">
+	</div><!-- /content -->
+</div><!-- /page -->
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+<script src="js/vendor/datebox/jqm-datebox-1.4.2.comp.calbox.min.js"></script>
+<script src="js/vendor/datebox/jqm-datebox-1.4.2.mode.calbox.min.js"></script>
+<script src="js/vendor/datebox/jquery.mobile.datebox.i18n.es-ES.utf8.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

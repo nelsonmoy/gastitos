@@ -1,0 +1,5 @@
+# Do not remove this line, otherwise mod_rewrite rules will stop working
+RewriteBase /
+
+Header add Access-Control-Allow-Origin "*"
+
